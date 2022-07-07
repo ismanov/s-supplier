@@ -1,0 +1,40 @@
+@mixin font($font-family: sans-serif, $font-size: 16px, $font-weight: 400, $font-style: normal) {
+  @if $font-family { font-family: $font-family };
+  @if $font-size { font-size: $font-size };
+  @if $font-family { font-weight: $font-weight };
+  @if $font-style { font-style: $font-style };
+}
+
+@mixin margin-class($type: 't', $margin: 0) {
+  .m-#{$type}-#{$margin} {
+    @if $type == 't' {
+      margin-top: #{$margin}px
+    }
+    @if $type == 'r' {
+      margin-right: #{$margin}px
+    }
+    @if $type == 'b' {
+      margin-bottom: #{$margin}px
+    }
+    @if $type == 'l' {
+      margin-left: #{$margin}px
+    }
+  }
+}
+
+@for $i from 1 through 200 {
+  @include margin-class('t', $i);
+  @include margin-class('r', $i);
+  @include margin-class('b', $i);
+  @include margin-class('l', $i);
+};
+
+@mixin border-radius($size) {
+  .b-r-#{$size} {
+    border-radius: #{$size}px;
+  }
+}
+
+@for $i from 1 through 30 {
+  @include border-radius($i);
+};

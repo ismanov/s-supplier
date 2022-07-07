@@ -1,0 +1,286 @@
+@import "~styles/variables";
+@import "~styles/mixins";
+
+/* AGGREGATION-COMMON
+------------------------------------ */
+
+.aggregationCode {
+  text-align: center;
+  margin: 0 0 20px;
+}
+
+.resultPrintBarcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 0;
+  line-height: 0;
+}
+
+.resultPrintBarcodeInner {
+  & svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.codesList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 -10px;
+}
+
+.codesItem {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 0 0 15px 10px;
+  padding: 10px 29px 10px 14px;
+  border: 1px solid #8F92A8;
+  border-radius: 10px;
+  min-width: 286px;
+  min-height: 60px;
+}
+
+.codesItemEmpty {
+  justify-content: center;
+}
+
+.codesItemError {
+  border-color: $danger;
+  background: $danger;
+}
+
+.codesItemErrorText {
+  margin: 0 7px 0 0;
+  font-size: 15px;
+  color: #fff;
+}
+
+.codesItemErrorIcon {
+  font-size: 0;
+  line-height: 0;
+
+  & .ant-btn {
+    background: none;
+    border: none;
+    width: auto;
+    height: auto;
+    padding: 0;
+  }
+}
+
+.codesItemIcon {
+  margin: 0 8px 0 0;
+  font-size: 0;
+  line-height: 0;
+  color: #1DD1A1;
+}
+
+.codesItemCode {
+  display: flex;
+  font-size: 12px;
+}
+
+.codesItemNum {
+  min-width: 15px;
+  margin: 0 3px 0 0;
+}
+
+.codesItemRemove {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  border: none;
+  padding: 0 !important;
+  width: 20px;
+  height: 20px;
+}
+
+/* AGGREGATION-ADD
+------------------------------------ */
+
+.aggregation-add {
+  .stepsRow {
+    display: flex;
+    justify-content: space-between;
+    margin: -10px 0 30px;
+
+    .stepsRowLeft {
+      display: flex;
+    }
+
+    .stepsInner {
+      display: inline-flex;
+      align-items: center;
+      height: 35px;
+      background: #fff;
+      border-radius: 6px;
+
+      & > div {
+        margin: 0 20px;
+        height: auto;
+        background: none;
+        border: none;
+        font-size: 15px;
+        font-weight: 500;
+        color: $mediumBlue;
+
+        &.step-active {
+          color: $mainColor;
+        }
+      }
+    }
+
+    .boxesCount {
+      display: flex;
+      align-items: center;
+      margin: 0 0 0 20px;
+      padding: 2px 10px;
+      background: $mainColor;
+      color: #fff;
+      border-radius: 6px;
+    }
+
+    .boxesCountLabel {
+      margin: 0 6px 0 0;
+    }
+  }
+
+  .aggregation-head {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .statusPanel {
+    width: 100%;
+    margin: -10px 0 20px;
+
+    .ag-info {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #fff;
+      border-radius: 6px;
+      padding: 10px 20px;
+    }
+
+    .ag-infoItem {
+      display: flex;
+      align-items: center;
+      padding: 2px 0;
+    }
+
+    .ag-infoItemName {
+      width: 80px;
+      font-size: 12px;
+    }
+
+    .ag-infoItemValue {
+      font-size: 16px;
+    }
+
+    .ag-status {
+      height: 100%;
+      position: relative;
+      padding: 16px;
+      background: #fff;
+      border-radius: 6px;
+    }
+
+    .ag-error-status {
+      background: $danger;
+      color: #fff;
+    }
+
+    .ag-statusName {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      margin: -7px 0 0;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    .ag-statusText {
+      font-size: 48px;
+      line-height: 1;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .ag-counter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      background: $mainColor;
+      border-radius: 6px;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1;
+      color: #fff;
+    }
+  }
+
+  .aggregationCodeScan {
+    .aggregationCode {
+      background: #fff;
+      margin: 0;
+    }
+
+    .aggregationCode-placeholder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      color: $grayBlue;
+    }
+
+    .placeholderIcon {
+      margin: 0 15px 0 0;
+      font-size: 0;
+      line-height: 0;
+    }
+  }
+}
+
+/* AGGREGATION-DETAILS
+------------------------------------ */
+
+.aggregation-details {
+  .resultWrap {
+    padding: 10px 0 0;
+
+    .resultRow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .resultPrintWr {
+      background: #fff;
+    }
+
+    .resultButton {
+      margin: 0 0 0 20px;
+    }
+  }
+}
+
+/* AGGREGATION-ORDER-PRINT
+------------------------------------ */
+
+.aggregationOrderPrint {
+  position: relative;
+  padding: 20px;
+  min-height: 150px;
+}
+
+.pagebreak {
+  clear: both;
+  page-break-after: always;
+}

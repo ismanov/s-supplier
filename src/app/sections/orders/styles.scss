@@ -1,0 +1,366 @@
+@import "~styles/variables";
+@import "~styles/mixins";
+
+/* ORDERS LIST
+-------------------------- */
+
+.orders-main {
+  .custom-select {
+    width: 160px;
+  }
+
+  &__filter {
+
+  }
+
+  &__status {
+    &-NEW {
+      color: $blueR;
+    }
+    
+    &-REJECTED {
+      color: red;
+    }
+
+    &-WAITING_FOR_INVOICE {
+      color: $orange;
+    }
+
+    &-WAITING_FOR_FILLING_POWER_OF_ATTORNEY {
+      color: $orange;
+    }
+
+    &-WAITING_FOR_CONTRACT_ATTACHMENT {
+      color: $orange;
+    }
+
+    &-COMPLETED {
+      color: $mainColor;
+    }
+
+    /*&-APPROVED {
+      color: $mainColor;
+    }
+
+    &-REJECTED {
+      color: $danger;
+    }
+
+    &-REVISED_BY_SUPPLIER {
+      color: $orange;
+    }
+
+    &-REVISED_BY_CLIENT {
+      color: $blueAqua;
+    }*/
+  }
+}
+
+/* ORDER PAGE
+------------------------------ */
+
+.order-details {
+  position: relative;
+  background: #fff;
+  box-shadow: 0 0 4px rgba(0,0,0,.04), 0 2px 6px rgba(0,0,0,.1);
+  padding: 16px;
+  flex-grow: 1;
+  border-radius: 6px;
+
+  &__tabs {
+    .ant-tabs-tabpane {
+      padding: 5px;
+    }
+  }
+
+  &-customer-wr {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-customer {
+    &-row {
+      display: flex;
+    }
+
+    &-item {
+      max-width: 280px;
+      margin: 0 30px 20px 0;
+
+      &-title {
+        color: $grayBlue;
+        margin: 0 0 4px;
+      }
+
+      &-body {
+        color: $darkBlue;
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 0 30px;
+
+    &-item {
+      margin: 0 0 10px 20px;
+    }
+  }
+
+  .order-products {
+    width: 100%;
+    padding: 0 0 20px;
+
+    &__row {
+      display: flex;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid $coolGray;
+
+      &-item {
+        margin: 0 20px 0 0;
+
+        &.item-name {
+          flex-grow: 1;
+          max-width: 300px;
+        }
+
+        &.item-unit, &.item-count {
+          width: 100px;
+        }
+
+        &.item-vat {
+          width: 65px;
+        }
+
+        &.item-price {
+          width: 115px;
+        }
+
+        &-title {
+          margin: 0 0 5px;
+          font-size: 14px;
+          line-height: 16px;
+          color: #64748b;
+          font-weight: 300;
+        }
+
+        &-body {
+          display: flex;
+          align-items: center;
+          min-height: 40px;
+        }
+
+        &.item-error {
+          .order-products__row-item-title, .order-products__row-item-body, .form-field__title {
+            color: $danger;
+          }
+
+          input.ant-input {
+            border-color: $danger;
+          }
+        }
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+
+      .order-products-textarea {
+        width: 400px;
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      align-items: flex-start;
+    }
+
+    &__notes {
+      &-head {
+        font-size: 18px;
+        margin: 0 0 6px;
+      }
+
+      &__item {
+        border: 1px solid $grayBlueLight;
+        padding: 10px;
+        margin: 0 0 10px;
+
+        &__title {
+          font-size: 17px;
+          font-weight: bold;
+
+          span {
+            font-weight: normal;
+            padding-left: 15px;
+            font-size: 14px;
+          }
+        }
+
+        &__body {
+          font-size: 14px;
+        }
+      }
+
+      &.notes-odd {
+        .order-products__notes__item {
+          &:nth-child(even) {
+            background: $liteAqua;
+          }
+        }
+      }
+
+      &.notes-even {
+        .order-products__notes__item {
+          &:nth-child(odd) {
+            background: $liteAqua;
+          }
+        }
+      }
+    }
+
+    &__total {
+      display: flex;
+      justify-content: flex-end;
+      font-size: 17px;
+      padding-left: 20px;
+
+      & > div {
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+/* ORDER CONTRACT */
+
+.order-contract {
+  position: relative;
+  background: #fff;
+  z-index: 2;
+  min-height: 100px;
+
+  .ant-form {
+    width: 400px;
+
+    .ant-select {
+      width: 100%;
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+    &__item {
+      span {
+        font-weight: bold;
+      }
+
+      &__warning {
+        color: $danger;
+      }
+    }
+
+    &__button {
+      font-size: 16px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* ORDER INVOICE PAYMENT */
+
+.order-invoice-payment {
+  iframe {
+    border: none;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+/* ORDER POWER OF ATTORNEY */
+
+.order-power-of-attorney {
+  iframe {
+    border: none;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    &__right {
+      display: flex;
+    }
+  }
+
+  &__item {
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+/* INVOICE */
+
+.order-invoice {
+  iframe {
+    border: none;
+  }
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    &__right {
+      display: flex;
+    }
+  }
+
+  &__item {
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+.invoice-form {
+  &__item {
+    display: flex;
+    margin-bottom: 15px;
+
+    &-field {
+      display: flex;
+
+      &-right {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__controls {
+    text-align: right;
+  }
+}

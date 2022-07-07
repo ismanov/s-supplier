@@ -1,0 +1,109 @@
+@import "~styles/mixins.scss";
+
+.auth-particle {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  background: #f7f7f7;
+}
+
+.auth-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 100px;
+  height: 100%;
+
+  &__info {
+    position: relative;
+    width: 60%;
+
+    &_top {
+      min-height: 200px;
+    }
+  }
+
+  &__form {
+    position: relative;
+    width: 30%;
+    background: #fff;
+    padding: 30px 10px;
+    border-radius: 7px;
+    box-shadow: 0 1px 7px 1px rgba(0,0,0, 0.2);
+
+    form {
+      max-width: 430px;
+      margin: 0 auto;
+
+      .auth-input {
+        padding: 14px;
+        font-size: 16px;
+        border-radius: 4px;
+
+        &.ant-input-password {
+          padding: 0;
+
+          input {
+            padding: 14px;
+          }
+
+          .ant-input-suffix {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 14px;
+          }
+        }
+      }
+    }
+
+    &_logo {
+      max-width: 240px;
+      margin: 0 auto 30px;
+      text-align: center;
+
+      img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      span {
+        display: block;
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+
+    &__links {
+      display: flex;
+      justify-content: space-between;
+      max-width: 430px;
+      margin: 0 auto;
+      padding-top: 15px;
+
+      &.links-centered {
+        justify-content: center;
+      }
+
+      a {
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  &__title {
+    @include font('Exo 2', 36px, 700, italic);
+    color: #009f3c;
+  }
+
+  &__typed {
+    @include font('Exo 2', 36px, 700, italic);
+    color: #5C5C5C;
+  }
+}

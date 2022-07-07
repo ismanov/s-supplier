@@ -1,0 +1,33 @@
+@import "~styles/mixins";
+@import "~styles/variables";
+
+.form-section-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.form-field {
+  &__title {
+    margin: 0 0 5px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #64748B;
+    font-weight: 300;
+  }
+
+  &__note {
+    margin: 3px 0 0;
+    color: #B2B1BC;
+    font-size: 11px;
+  }
+
+  &__error {
+    margin: 2px 0 0;
+    color: $danger;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+}

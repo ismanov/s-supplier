@@ -1,0 +1,154 @@
+@import "~styles/variables";
+@import "~styles/mixins";
+
+.user-cabinet {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 8px;
+
+  .user-block {
+    background: #fff;
+    padding: 24px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    margin: 0 0 24px;
+
+    .ant-upload-picture-card-wrapper {
+      text-align: center;
+
+      .ant-upload-select-picture-card {
+        margin: 0;
+      }
+    }
+  }
+
+  &__left, &__middle, &__right {
+    width: 33.3%;
+    padding-right: 20px;
+  }
+
+  &__right {
+    padding-right: 0;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 30px;
+
+    &-branches {
+      align-items: flex-end;
+    }
+
+    span {
+      color: $mainColor;
+      @include font('Exo 2', 20px, 500);
+      line-height: 30px;
+      flex-grow: 1;
+    }
+
+    .custom-button {
+      margin-right: -10px;
+    }
+  }
+
+  .edit-item {
+    text-align: right;
+    padding-right: 3px;
+  }
+
+  &__info {
+    padding: 14px 0 0;
+
+    &__double-row {
+      display: flex;
+      justify-content: space-between;
+
+      .user-cabinet__info__item {
+        width: 48%;
+      }
+    }
+
+    &__item {
+      padding: 0 0 16px;
+
+      &__edit-branch {
+        display: flex;
+      }
+
+      &-title {
+        color: $mediumBlue;
+        @include font('Exo 2', 14px);
+        line-height: 22px;
+      }
+
+      &-text {
+        color: $darkBlue;
+        @include font('Exo 2', 20px);
+        line-height: 30px;
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    .ant-collapse {
+      background: none;
+      border: none;
+
+      & > .ant-collapse-item {
+        border-bottom: none;
+
+        .ant-collapse-header {
+          padding: 12px 40px 12px 0;
+          color: $darkBlue;
+          @include font('Exo 2', 20px);
+          line-height: 30px;
+
+          &:hover {
+            color: $mainColor;
+          }
+
+          .ant-collapse-arrow {
+            top: 50%;
+            padding: 0;
+            right: 16px;
+            left: auto;
+            transform: translateY(-50%);
+          }
+        }
+
+        &-active {
+          .ant-collapse-header {
+            color: $mainColor;
+          }
+        }
+      }
+
+      .ant-collapse-content {
+        border-top: none;
+        border-bottom: 1px solid $grayBlueLight;
+
+        & > .ant-collapse-content-box {
+          padding: 16px 0;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    position: relative;
+    text-align: center;
+
+    &__pic {
+      height: 110px;
+
+      img {
+        max-width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
